@@ -1,0 +1,4 @@
+This exploit leverages an out of bounds array lookup into function pointers
+to divert control from the application. The exploit leverages some dead code,
+a "debug_handler" for an information leak and then executes arbitrary commands
+with system() from libc.

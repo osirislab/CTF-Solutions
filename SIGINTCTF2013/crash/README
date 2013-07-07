@@ -1,0 +1,6 @@
+This exploit leverages an uncontrolled format string vulnerability to create
+a read anything anywhere and a write anything anywhere condition. The 
+exploit leverages these conditions to leak a stack address and write a ROP
+chain to unused stack memory. The exploit then corrupts a saved base pointer
+on the stack to ensure the execution of the ROP payload eventually spawning
+a shell. 
