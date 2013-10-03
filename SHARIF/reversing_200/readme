@@ -1,0 +1,6 @@
+Evan Jensen
+
+-reverse200.exe is a windows binary with a bunch of bugs in it making it unusable
+
+It runs three transforms against the encrypted string before trying to print it
+I've implemented those transforms in python istead of writing binary patches for -reverse200.exe

@@ -1,0 +1,3 @@
+Evan Jensen
+
+run crypto_200_1.py and look for the printable text. The solituion to this problem is the md5sum of of key (eight 0's or 1's)
