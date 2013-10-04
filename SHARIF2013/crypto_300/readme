@@ -1,0 +1,8 @@
+In this problem you need to find the value of x that satisfies the equation.
+
+The key to solving this problem is realizing that the difference between the
+values of the right hand side of the equation for x and x+1 are consitantly
+different by a value of 11111111111111111111111. This makes finding x as simple
+as dividing 918200861937462866666657484658047292039 by 
+11111111111111111111111 for a value of 82638077574371658 and submitting the md5
+sum(413e07f82db619cd34f8152fae2c3431) for the points. No hard math needed :)
