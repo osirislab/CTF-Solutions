@@ -1,0 +1,42 @@
+set disassembly-flavor intel 
+
+b sleep
+commands
+silent
+set *(int*)$rip=0xc3
+c
+end
+
+b usleep
+commands
+silent
+set *(int*)$rip=0xc3
+c
+end
+
+b rand
+commands
+set *(int*)$rip=0xc3
+set $rax=9
+c
+end
+
+#cmp with 4 for print fag
+b *0x402174
+commands
+silent 
+call puts("cmp with 4 for flag")
+set *(int*)($rbp-0x178)=6
+c
+end
+
+
+#print out the flag?
+#rbp-0x174
+b *0x0402186
+commands
+silent 
+call puts("modify values to see whats up with the flag") 
+set *(int*)($rbp-0x174)=10
+c
+end

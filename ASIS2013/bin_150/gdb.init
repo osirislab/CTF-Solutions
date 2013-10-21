@@ -1,0 +1,43 @@
+set disassembly-flavor intel
+#break on error
+b *0x00000000004011E4
+commands
+silent
+#bt
+set *(int*)$rip=0xc3 
+c
+end
+
+
+#break on check of 0x400 file length
+b *0x00000000040291A
+commands
+silent
+i r rax
+c
+end
+
+#first number is based on the two digits after the dash and the rest of the data
+#second number is based on the first 16 digits
+
+
+#try setting the strings equal
+#rbp-0x28
+#rbp-0x30
+b *0x0000000000402C13
+commands
+silent
+#set *(int*)($rbp-0x28)=*(int*)($rbp-0x30)
+#set *(int*)($rbp-0x30)=*(int*)($rbp-0x28)
+c
+end
+
+
+#cout loop
+b *0x04023C2
+commands
+silent
+call puts($rdi)
+call puts($rdi+9)
+c
+end

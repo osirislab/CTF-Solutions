@@ -1,0 +1,23 @@
+#examine key material
+b *0x400C7B
+commands
+silent
+#first part
+x /wx $rbp-0x6c
+#second part
+x /wx $rbp-0x68 
+#third part
+x /wx $rbp-0x64 
+c
+end
+
+
+b *0x400D9C
+commands
+silent
+set *(int*)($rbp-0x44)=0x5d
+
+set $rip=0x400E12
+
+c
+end
