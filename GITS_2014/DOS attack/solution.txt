@@ -1,0 +1,17 @@
+Question: What x86 instruction has been used to allow access to extended memory without ever entering protected mode?
+
+For the more experienced this is a trivia challenge, but there is a fairly straight forward path to researching this. 
+
+If you know the right instruction already and need to verify, Wikipedia has exactly what you need: 
+http://en.wikipedia.org/wiki/LOADALL
+
+"As an example of the usefulness of these techniques, LOADALL can set up the CPU to allow access to all memory from real mode, without having to switch it into protected mode (the so-called 'unreal mode')."
+
+If you were going at it blind you could do some choice Googling with "x86 access extended memory without protected mode" and on the second page (https://pbs.twimg.com/media/BZ4TNB5CcAAQEt5.png) you would find some pages on rcollins.org.
+
+http://www.rcollins.org/articles/pmbasics/tspec_a1_doc.html
+http://www.rcollins.org/articles/loadall/tspec_a3_doc.html
+
+Reading through the admittedly pretty cool history of LOADALL you will find:
+
+"By manipulating the descriptor cache base registers, you can access the entire address space without switching to protected mode. In other words, by using LOADALL, you can access memory above 1Mb from real mode."
