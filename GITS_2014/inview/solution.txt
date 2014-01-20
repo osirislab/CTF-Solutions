@@ -1,0 +1,9 @@
+The file provided was originally named inview. 
+
+Opening it in a text editor (I used Sublime Text) shows that it looks like oddly formatted C code.
+
+Going on a pretty good guess, I turned on invisible characters in Sublime with "draw_white_space": "all"
+
+Tabs and spaces mixed in a challenge called inview? It's whitespace. http://en.wikipedia.org/wiki/Whitespace_(programming_language)
+
+Running the file contents (Whitespace ignores anything but whitespace) in http://ws2js.luilak.net/interpreter.html reveals the key: WhitespaceProgrammingIsHard
