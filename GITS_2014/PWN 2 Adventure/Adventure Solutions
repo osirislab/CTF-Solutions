@@ -1,0 +1,11 @@
+Unbearable:
+
+To solve this one you needed to open the game logic dll and edit local player attribute use accessory. The only accessory to edit is wine. Adjust the random range numbers to be 100 and the wine will give you invincibility and allow you to bypass the bears.
+
+Moon Boots:
+
+Similar to unbearable you needed to change the players initial jump velocity to something above 25. Then when you jump you wind up in space. Moon Boots!
+
+Cave of Nope:
+
+Again with jump edited you can jump over the wall in the spiders cave. Kill the big spider and you get the flag.
