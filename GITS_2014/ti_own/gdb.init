@@ -1,0 +1,14 @@
+set follow-fork-mode child
+set disassembly-flavor intel
+
+display /10i $rip
+
+b *0x00000000004014e7
+commands
+silent
+#i r rcx rax
+i r rax
+#x /2gx 0x603140
+
+c
+end
