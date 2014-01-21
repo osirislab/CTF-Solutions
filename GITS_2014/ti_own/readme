@@ -1,0 +1,25 @@
+##Exploit for the ti service from GITS-2014
+
+Application is a stack based calculator for double precision floating point numbers. 
+Example Usage:
+ 1
+ 2
+ +
+ .
+>3
+
+The application can be coerced into negativly indexing its floating point stack.
+By negativly indexing into the GOT we can overwrite the entry for exit.
+To exploit the service we write shellcode as a series of floating point numbers
+then overwrite the GOT entry for exit to point to the shellcode.
+In order to use socket reuse shellcode we wait for the signal handler to call
+exit, using the 'q' command will close the socket forcing the use of connect
+back shellcode.
+
+To run the exploit:
+in one window:
+./strace.sh
+in another window:
+python exploit.py
+
+In order to run the service you must have a user named gambino
