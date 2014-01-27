@@ -1,0 +1,81 @@
+set disassembly-flavor intel
+#set horizontal-scroll-mode on
+
+
+b *0x8048736
+commands
+silent
+print "original malloc"
+x /wx ($esp+0x224)
+print "fnptrs"
+x /wx ($esp+0x228)
+print "my malloc"
+x /wx ($esp+0x22c)
+c
+end
+
+b *0x80485B5
+commands
+silent
+print "fnptr malloc"
+i r eax
+c
+end
+
+
+b *0x8048621
+commands
+silent
+print "malloc I ctrl"
+i r eax
+c
+end
+
+
+b *0x8048697
+commands
+silent
+print "fnptrs"
+x /2wx $eax
+c
+end
+
+
+b *0x804858A
+commands
+silent
+print "size"
+i r eax
+c
+end
+
+
+
+b *0x08048598
+commands
+silent
+print "action"
+i r eax
+c
+end
+
+b *0x8048711
+commands
+silent
+p "strcpy"
+c
+end
+
+b *0x8048731
+commands
+silent
+p "filling stack buffer"
+c
+end
+
+b *0x8048699
+commands
+silent
+p "calling fnptr1"
+display /5i $eip
+end

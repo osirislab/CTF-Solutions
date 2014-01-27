@@ -1,0 +1,23 @@
+display /5i $eip
+
+b *0x08048699
+commands
+silent
+p "malloc ptr"
+x /wx $esp+0x6C
+c
+end
+
+b *0x804870f
+commands
+silent 
+i r eax
+c
+end
+
+b *0x80486AA
+commands
+x /wx $esp
+p "return"
+i r eax
+end

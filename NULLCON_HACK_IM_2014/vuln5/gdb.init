@@ -1,0 +1,41 @@
+set follow-fork-mode child
+set disable-randomization off
+
+b *0x80493BB
+commands
+silent
+p "printf"
+p "bp:"
+x /12wx $esp+0x15c+0xc-4
+p "cookie"
+x /wx $ebp-0x1C
+end
+
+b *0x80493C0
+commands
+silent
+p "after printf"
+p "bp:"
+x /12wx $esp+0x15c+0xc-4
+p "cookie"
+x /wx $ebp-0x1C
+end
+
+b *0x8049407
+commands
+silent
+p "return"
+x /4wx $esp
+end
+
+b *0x080493ef
+commands
+silent
+p "cookie"
+i r esi
+c
+end
+
+
+#set *(int*)($esp+8)=(*(int*)($esp-4))-0x14f
+#set *(int*)($esp+0xc)=(*(int*)($esp-4))-0x14f
