@@ -1,0 +1,14 @@
+#gdb -x dodocrackme
+file crackme                         
+                                     
+b * 0x4065ae                         
+commands                             
+    set $curr = $rbp + 32            
+    while *(char*)$curr != 0         
+        printf "%c", *(char*)$curr   
+        set $curr = $curr + 16       
+    end                              
+    printf "\n"                      
+end                                  
+                                     
+r                                    
