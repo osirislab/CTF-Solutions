@@ -1,0 +1,10 @@
+# divine_comedy.txt was downloaded from the torrent (rtorrent had no issues downloading it)
+# pg8800.txt is the original text file, downloaded from project gutenberg.
+
+$ diff divine_comedy.txt pg8800.txt
+1307,1308c1307,1308
+< To whom I thus: "What you are looking
+< For is 'At least this one wasn't a VM'."
+---
+> To whom I thus: "It is enough: no fear,
+> I see, lest nature in her part should tire."
