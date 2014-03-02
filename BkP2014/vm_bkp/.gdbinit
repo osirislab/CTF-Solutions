@@ -1,0 +1,14 @@
+b *0x0000000000400D5F
+commands
+silent
+p "end of AES instruction"
+p "program"
+x /gx $rbp-0x10
+
+end
+
+
+b *0x0400f80
+commands
+i r rcx rsi
+end

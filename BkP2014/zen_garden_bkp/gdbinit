@@ -1,0 +1,64 @@
+set pagination off
+
+b *0x8048EED
+commands
+silent
+p "calling s_brk"
+i r eax
+c
+end
+
+
+b *0x804942A
+commands
+silent
+p "calling getline"
+x /3wx $esp
+x /wx *(int*) $esp
+c
+end
+
+
+b *0x8048F5D
+commands
+silent
+p "begin of bkfree"
+x /wx 0x804BC88
+x /2wx *(int*)0x804BC88
+c
+end
+
+
+b *0x8048F7C
+commands
+silent
+p "end of bkfree"
+x /wx 0x804BC88
+x /2wx *(int*)0x804BC88
+c
+end
+
+
+
+b *0x08048F10
+commands
+silent
+p "begin of bkalloc"
+i r eax
+x /wx 0x804BC88
+x /2wx *(int*)0x804BC88
+c
+end
+
+
+
+b *0x8048F5C
+commands
+silent
+p "end of bkalloc"
+i r eax
+x /wx 0x804BC88
+x /2wx *(int*)0x804BC88
+c
+end
+

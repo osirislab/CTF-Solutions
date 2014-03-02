@@ -1,0 +1,22 @@
+set pagination off
+
+b *0x000000000400AD0
+commands
+silent
+p "Start Fetch"
+i r rsi
+x /bx $rsi+$rdi
+c
+end
+
+
+
+b *0x000000000400B53
+commands
+silent
+
+i r rax
+c
+end
+
+
