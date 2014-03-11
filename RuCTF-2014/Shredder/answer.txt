@@ -1,0 +1,4 @@
+Misc 100: Shredder
+This challenge was trivial. To solve, just rearrange the shredded papers to get the flag.
+
+RUCTF_TO_SHRED_IS_NOT_ENOUGH

@@ -1,0 +1,5 @@
+Misc 200: RuCTF radio
+This was possibly the most enjoyable and easiest challenge.
+All that was needed to get the flag was listen to the radio station and wait until the flag audio was played.
+
+The flag is: sounds good to me
