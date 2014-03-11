@@ -1,0 +1,19 @@
+Web 200: es
+This challenge involved getting the administrator account for a URL shortening
+service. Looking at the cookies, we can see a base64 blob, some dashes, and a
+sha1 hash. When seen together, the hash is usually an hmac of the blob. If you
+decoded the blob, you would get something like this:
+
+{"name":"username","expires":1394308083,"new_flash":{"id":"nJoh24A_Q9qbo9-7S7Ivhb"}}
+
+To change the data in the blob, we need to update the hmac to match. If you
+viewed the source, you would see a useful yet ambiguous (if you didn't know
+what you were doing) hint:
+
+    <!-- secret: ructf -->
+
+This turned out to be the hmac key. Now that you can sign your own sessions,
+just log in as admin and check out the list of generated links.
+
+On a side note, you could inject your own headers, but that wasn't part of the
+challenge apparently.

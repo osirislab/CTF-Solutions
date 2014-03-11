@@ -1,0 +1,11 @@
+Web 100: php
+The vulnerability was a local file inclusion via the Accept-Language header.
+The web page attemped to detect your language automatically (using the header)
+and would give you a translated copy of the wikipedia article on CTFs. There
+were no errors, only "successfully detected language" or "could not detect
+language." My final payload to grab the source code of the challenge was as
+follows:
+
+GET / HTTP/1.1
+Host: w1.quals.ructf.org
+Accept-Language: ,php://filter/convert.base64-encode/resource=/usr/share/nginx/www/index.php,

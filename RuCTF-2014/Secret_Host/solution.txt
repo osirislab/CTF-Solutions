@@ -1,0 +1,6 @@
+Forensics 100: Secret Host
+You're given a memory dump and two files: a certificate and an openvpn
+configuration. I set up tunnelblick to use the certificate and config file to
+connect to the VPN, but was greeted with a password. I inspected the memory
+dump (read: I used strings) and found the credentials. I authenticated, visited
+http://10.0.0.100/, viewed the source, and got the flag.
