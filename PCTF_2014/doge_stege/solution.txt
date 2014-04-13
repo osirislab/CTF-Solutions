@@ -1,0 +1,2 @@
+Using StegoSolve and looking at the random color maps, I found the key.
+pctf{keep_doge_alive_2014}
