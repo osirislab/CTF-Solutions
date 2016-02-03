@@ -1,0 +1,15 @@
+Overview:
+* Page that lets you upload a zip and cats all of files in the zip
+
+Attack:
+* Pretty obvious the attack is zip symlinks
+* Symlinked a file to /var/www/html/index.php to dump page code
+* Noticed flag path had to be read with sudo so couldn't just symlink to it
+* Found a race condition
+** cat all files
+** rm -rf /{upload_dir}/
+** If we can keep the cat running, we can upload a PHP shell and run commands from it
+* Symlinked /dev/zero to a file
+* Zipped that symlink and a php shell
+* Uploaded and went to tmp path given
+* sudo cat {flag_path}
