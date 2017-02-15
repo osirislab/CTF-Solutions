@@ -1,0 +1,25 @@
+[System Process]
+System
+smss.exe
+csrss.exe
+winlogon.exe
+services.exe
+lsass.exe
+VBoxService.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+explorer.exe
+spoolsv.exe
+VBoxTray.exe
+vmware-usbarbitrator.exe
+wscntfy.exe
+alg.exe
+ProcessHacker.exe
+OSE.EXE
+svchost.exe
+AdobeReader.exe
+AcroRd32.exe
+AcroRd32.exe

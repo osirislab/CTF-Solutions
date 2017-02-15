@@ -1,0 +1,3 @@
+http://1.2.3.4#:@@ctf.ekoparty.org/test
+
+wget sends this to 1.2.3.4, php's url decoder resolves host as ctf.ekoparty.org

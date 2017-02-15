@@ -1,0 +1,1 @@
+local: RubyVM::InstructionSequence.disasm(method(:get_flag))

