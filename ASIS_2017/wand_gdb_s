@@ -1,0 +1,9 @@
+set print elements 0
+
+b *0x4010a0
+commands
+print *(char**)$rdi
+q
+end
+
+r
