@@ -1,0 +1,22 @@
+0-3: syscall no
+4-7: arch
+8-15: ip
+16-23: arg1
+24-31: arg2
+32-39: arg3
+
+
+if 4th char is not 0xc000003e, break - AUDIT_ARCH_X86_64
+
+if 0th char is:
+0 - read
+1 - write
+5 - fstat
+8 - lseek
+
+9 - mmap -> look at byte 32, &1, die if == 1
+10 - mprotect -> ''' so can't make readable memory
+
+12 - brk
+60 - exit
+231 - exit group
