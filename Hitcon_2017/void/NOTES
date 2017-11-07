@@ -1,0 +1,33 @@
+b *0x555555554285
+commands
+set *(char*)(0x55555575504f)=0x21
+end
+
+b *0x555555554967
+commands
+set *(int64_t*)(0x555555755040)=0xc3046f66006371e8
+set *(int64_t*)(0x555555755048)=0x02cb95a0affa1215
+end
+
+
+
+comp input with '!' @ 0x285
+    set *(0x55555555493a+0x200715)=(char)0x21
+MOV loop @ 0x960
+    ends @ 0x967
+
+assembles new code @ 0x85f
+    xmm1 = xmmword [rbx] ^ xmmword [rsi]
+        rbx = 0x201040
+        rsi = 0x798
+    xmm0 = xmmword [rsi]
+        rsi = 0x7a8
+    for i in range(0xa):
+        aesenc xmm1, xmm0
+            state: xmm1 (xor)
+            key: xmm0 (program 0x7a8 + i*16)
+    aes loop ends @ 0x894
+
+    comp xmm0, xmm1
+        xmm0: 0x2846fb67171be9b047cf6d49120447e7
+
