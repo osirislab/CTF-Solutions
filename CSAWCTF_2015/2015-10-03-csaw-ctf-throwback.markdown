@@ -7,7 +7,7 @@ slug: csaw-ctf-throwback
 title: CSAW CTF 2015 - Throwback
 ---
 
-1. We can see a recent bugfix to CTFd, preventing unauthed admin calls at [https://github.com/isislab/CTFd/commit/9578355143d7af675fc4776b0f2de802be91e261](https://github.com/isislab/CTFd/commit/9578355143d7af675fc4776b0f2de802be91e261).
+1. We can see a recent bugfix to CTFd, preventing unauthed admin calls at [https://github.com/CTFd/CTFd/commit/9578355143d7af675fc4776b0f2de802be91e261](https://github.com/CTFd/CTFd/commit/9578355143d7af675fc4776b0f2de802be91e261).
 
 2. We make a POST request to it with cURL with: `curl -da=a https://ctf.isis.poly.edu/admin/chal/new`.
 
